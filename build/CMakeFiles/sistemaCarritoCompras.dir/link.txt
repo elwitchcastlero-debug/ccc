@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/sistemaCarritoCompras.dir/src/Usuario.cpp.o -o sistemaCarritoCompras  libProducto.a libItemCarrito.a libCarritoCompras.a libItemCarrito.a libProducto.a 

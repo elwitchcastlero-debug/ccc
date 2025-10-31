@@ -1,0 +1,2 @@
+/usr/bin/ar qc libItemCarrito.a CMakeFiles/ItemCarrito.dir/src/ItemCarrito.cpp.o
+/usr/bin/ranlib libItemCarrito.a

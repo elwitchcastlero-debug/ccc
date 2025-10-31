@@ -1,0 +1,2 @@
+/usr/bin/ar qc libProducto.a CMakeFiles/Producto.dir/src/Producto.cpp.o
+/usr/bin/ranlib libProducto.a

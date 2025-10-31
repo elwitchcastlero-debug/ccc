@@ -1,0 +1,2 @@
+/usr/bin/ar qc libCarritoCompras.a CMakeFiles/CarritoCompras.dir/src/CarritoCompras.cpp.o
+/usr/bin/ranlib libCarritoCompras.a

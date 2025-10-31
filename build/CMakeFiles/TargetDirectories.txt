@@ -1,0 +1,6 @@
+/root/carrito_compras/build/CMakeFiles/Producto.dir
+/root/carrito_compras/build/CMakeFiles/ItemCarrito.dir
+/root/carrito_compras/build/CMakeFiles/CarritoCompras.dir
+/root/carrito_compras/build/CMakeFiles/sistemaCarritoCompras.dir
+/root/carrito_compras/build/CMakeFiles/edit_cache.dir
+/root/carrito_compras/build/CMakeFiles/rebuild_cache.dir
