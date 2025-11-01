@@ -8,7 +8,7 @@ using namespace std;
 class Usuario {
     string nombre;
     int id;
-    CarritoCompras carrito_compras;
+    vector<CarritoCompras> historial;
 
 public:
     Usuario(string n, int i) : nombre(n), id(i) {}
@@ -16,30 +16,26 @@ public:
     void mostrarInfo() const {
         cout << "\nUsuario: " << nombre << " (ID: " << id << ")" << endl;
     }
+void agregarhistorial(CarritoCompras carro){
+    historial.push_back(carro);
+}
 
-    void agregarCompra(const ItemCarrito& item) {
-        carrito_compras.agregarItem(item);
+float gasto() const {
+        float g = 0.0;
+        for (const auto &c : historial)
+            g += c.calcularTotal();
+        return g;
     }
-
-    void quitarCompra(const ItemCarrito& item) {
-        carrito_compras.quitarItem(item);
-    }
-
-    void mostrarCompras() const {
-        cout << "\n--- Compras de " << nombre << " ---" << endl;
-        for (const auto& item : carrito_compras.carrito()) {
-            cout << item.getName()
-                 << " | Cantidad: " << item.getCant()
-                 << " | Precio: $" << item.getPrice()
-                 << " | Subtotal: $" << item.getPrice() * item.getCant()
+    void mostrarhistorial() const {
+        for (const auto& carro : historial) {
+            cout 
+                 << " | Subtotal: $" << carro.calcularTotal()
                  << endl;
         }
-        cout << "Total gastado: $" << carrito_compras.calcularTotal() << endl;
+        cout << "Total gastado: $" << gasto() << endl;
     }
 
-    float gasto() const {
-        return carrito_compras.calcularTotal();
-    }
+    
 };
 
 // --------------------- MAIN ---------------------
@@ -78,9 +74,12 @@ int main() {
     cout << "\nCarrito actualizado:" << endl;
     carrito.mostrarCarrito();
 
+    user.agregarhistorial(carrito);
+
+
     // Asociar carrito al usuario (solo demostrativo)
     cout << "\nResumen final de compras:" << endl;
-    user.mostrarCompras();
+    user.mostrarhistorial();
 
     return 0;
 }
